@@ -1,7 +1,7 @@
 "use client";
 import Brain from "@/components/brain";
 import { motion, useInView, useScroll } from "framer-motion";
-import Image from "next/image";
+
 import { useRef } from "react";
 
 const AboutPage = () => {
@@ -86,7 +86,7 @@ const AboutPage = () => {
 
   <div className="flex flex-wrap gap-4 mb-12">
   {[
-    "React.js", "Next.js", "JavaScript", "TypeScript", "Tailwind CSS","Bootstrap",
+    "React.js", "Next.js", "JavaScript", "TypeScript","AWS S3", "Tailwind CSS","Bootstrap",
     "Figma", "Node.js", "Express.js", "ASP.NET", "PHP", "MongoDB", "PostgreSQL", "SQL","Docker",
     "Firebase",  "Git"
   ].map((skill) => (

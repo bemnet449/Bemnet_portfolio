@@ -1,6 +1,7 @@
 "use client";
 
-import Image from "next/image";
+
+import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 import { useState } from "react";
 import NavLink from "./navLink";
@@ -86,24 +87,27 @@ const Navbar = () => {
         </Link>
       </div>
       {/* SOCIAL */}
-      <div className="hidden md:flex gap-4 w-1/3">
-      <Link href="https://github.com/bemnet449" target="_blank" rel="noopener noreferrer">
-    <Image src="/github.png" alt="GitHub" width={24} height={24} />
+     
+
+<div className="hidden md:flex gap-4 w-1/3">
+  <Link href="https://github.com/bemnet449" target="_blank" rel="noopener noreferrer">
+    <FaGithub size={24} />
   </Link>
 
   <Link href="https://www.instagram.com/bonvack01" target="_blank" rel="noopener noreferrer">
-    <Image src="/instagram.png" alt="Instagram" width={24} height={24} />
+    <FaInstagram size={24} />
   </Link>
 
-  <Link href="/">
-    <Image src="/linkedin.png" alt="LinkedIn" width={24} height={24} />
+  <Link href="https://www.linkedin.com/in/bemnet-sintayehu-557a83349/" target="_blank" rel="noopener noreferrer">
+    <FaLinkedin size={24} />
   </Link>
-       
-        <Link href="/">
-          <Image src="/pinterest.png" alt="" width={24} height={24} />
-        </Link>
-        
-      </div>
+
+  <Link href="https://x.com/Bemnetsin" target="_blank" rel="noopener noreferrer">
+    <FaTwitter size={24} />
+  </Link>
+</div>
+
+
       {/* RESPONSIVE MENU */}
       <div className="md:hidden">
         {/* MENU BUTTON */}
