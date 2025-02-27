@@ -1,20 +1,15 @@
 "use client";
+import Image from "next/image";
 import Brain from "@/components/brain";
 import { motion, useInView, useScroll } from "framer-motion";
-
 import { useRef } from "react";
 
 const AboutPage = () => {
   const containerRef = useRef();
-
   const { scrollYProgress } = useScroll({ container: containerRef });
 
   const skillRef = useRef();
-  // const isSkillRefInView = useInView(skillRef, {once:true});
   const isSkillRefInView = useInView(skillRef, { margin: "-100px" });
-
-  const experienceRef = useRef();
-  const isExperienceRefInView = useInView(experienceRef, { margin: "-100px" });
 
   return (
     <motion.div
@@ -28,25 +23,32 @@ const AboutPage = () => {
         {/* TEXT CONTAINER */}
         <div className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3 lg:pr-0 xl:w-1/2">
           {/* BIOGRAPHY CONTAINER */}
-          <div className="flex flex-col gap-12 justify-center">
+          <div className="flex flex-col gap-12 justify-center items-center">
             {/* BIOGRAPHY IMAGE */}
-           
+            <div className="w-[300px] h-[300px] rounded-full overflow-hidden shadow-lg">
+              <Image 
+                src="/2.jpg" 
+                alt="Profile Image" 
+                width={400} 
+                height={400} 
+                className="object-cover w-full h-full"
+              />
+            </div>
+
             {/* BIOGRAPHY TITLE */}
             <h1 className="font-bold text-2xl">ABOUT ME</h1>
+
             {/* BIOGRAPHY DESC */}
-          
+            <p className="text-lg text-center">
+              I am a dedicated and versatile full-stack developer with a strong foundation in Computer Science.
+            </p>
+            <p className="text-lg text-center">
+              I am passionate about modern web and mobile app development, leveraging cutting-edge technologies to create dynamic, responsive, and user-friendly applications.
+            </p>
+            <p className="text-lg text-center">
+              With 2+ years of experience, I have accumulated over 4,000+ coding hours, completed 10+ projects, and worked with multiple satisfied clients. My expertise spans both front-end and back-end development, allowing me to create seamless and responsive applications.
+            </p>
 
-<p className="text-lg">
-  I am a dedicated and versatile full-stack developer with a strong foundation in Computer Science   
-</p>
-<p className="text-lg">
-  I am passionate about modern web and mobile app development, leveraging cutting-edge technologies to create dynamic, responsive, and user-friendly applications. 
-</p>
-<p className="text-lg">
-  With 2+ years of experience, I have accumulated over 4,000 + coding hours, completed 10+ projects, and worked with multiple satisfied clients. My expertise spans both front-end and back-end development, allowing me to create seamless and responsive applications.
-</p>
-
-            
             {/* BIOGRAPHY SCROLL SVG */}
             <motion.svg
               initial={{ opacity: 0.2, y: 0 }}
@@ -70,42 +72,37 @@ const AboutPage = () => {
                 strokeWidth="1"
               ></path>
             </motion.svg>
+          </div>
+
+          {/* SKILL SECTION */}
+          <div className="flex flex-col gap-12 justify-center mb-20" ref={skillRef}>
+            <motion.h1
+              initial={{ x: "-300px" }}
+              animate={isSkillRefInView ? { x: 0 } : {}}
+              transition={{ delay: 0.2 }}
+              className="font-bold text-2xl"
+            >
+              SKILLS
+            </motion.h1>
+
+            <div className="flex flex-wrap gap-4 mb-12">
+              {[
+                "React.js", "Next.js", "JavaScript", "TypeScript", "AWS S3", "Tailwind CSS", "Bootstrap",
+                "Figma", "Node.js", "Express.js", "ASP.NET", "PHP", "MongoDB", "PostgreSQL", "SQL", "Docker",
+                "Firebase", "Git"
+              ].map((skill) => (
+                <div
+                  key={skill}
+                  className="p-6 border rounded-lg shadow-lg w-36 h-36 flex items-center justify-center text-lg font-semibold transition-all duration-300 ease-in-out 
+                    hover:bg-black hover:text-white hover:scale-105"
+                >
+                  {skill}
+                </div>
+              ))}
             </div>
-            <div className="flex flex-col gap-12 justify-center mb-20" ref={skillRef}>
-  {/* SKILL TITLE */}
-  <motion.h1
-    initial={{ x: "-300px" }}
-    animate={isSkillRefInView ? { x: 0 } : {}}
-    transition={{ delay: 0.2 }}
-    className="font-bold text-2xl"
-  >
-    SKILLS
-  </motion.h1>
-  
- 
-
-  <div className="flex flex-wrap gap-4 mb-12">
-  {[
-    "React.js", "Next.js", "JavaScript", "TypeScript","AWS S3", "Tailwind CSS","Bootstrap",
-    "Figma", "Node.js", "Express.js", "ASP.NET", "PHP", "MongoDB", "PostgreSQL", "SQL","Docker",
-    "Firebase",  "Git"
-  ].map((skill) => (
-    <div
-      key={skill}
-      className="p-6 border rounded-lg shadow-lg w-36 h-36 flex items-center justify-center text-lg font-semibold transition-all duration-300 ease-in-out 
-                 hover:bg-black hover:text-white hover:scale-105"
-    >
-      {skill}
-    </div>
-  ))}
-</div>
-
-  {/* SKILL SCROLL SVG */}
-</div>
-
-          {/* EXPERIENCE CONTAINER */}
-         
+          </div>
         </div>
+
         {/* SVG CONTAINER */}
         <div className="hidden lg:block w-1/3 sticky top-0 z-30 xl:w-1/2">
           <Brain scrollYProgress={scrollYProgress} />
