@@ -15,8 +15,8 @@ const Homepage = () => {
       <div className="h-full flex flex-col lg:flex-row px-2 sm:px-4 md:px-8 lg:px-20 xl:px-48">
         {/* IMAGE CONTAINER - Centered on Small Screens */}
         <div className="w-full sm:w-3/4 md:w-1/2 lg:w-1/2 h-64 sm:h-80 md:h-96 lg:h-[75vh] relative mt-4 rounded-2xl shadow-2xl shadow-black overflow-hidden 
-          flex sm:justify-center lg:justify-start">
-          <div className="w-full sm:w-3/4 md:w-full lg:w-full h-full relative">
+          flex justify-center mx-auto">
+          <div className="w-full h-full relative">
             <Image 
               src="/1.jpg" 
               alt="Hero Image" 

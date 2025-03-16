@@ -62,7 +62,6 @@ const PortfolioPage = () => {
   const { scrollYProgress } = useScroll({ target: ref });
   const x = useTransform(scrollYProgress, [0, 0.1, 1], ["0%", "0%", "-80%"]);
 
-
   return (
     <motion.div
       className="h-full"
@@ -87,36 +86,32 @@ const PortfolioPage = () => {
           <path d="M5 9l7 7 7-7" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </motion.svg>
         <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex">
-  {/* Reduced empty div */}
-  <div className="h-screen w-[30vw] flex-shrink-0"></div>
-
-  {items.map((item) => (
-    <div
-      className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color} shadow-lg`}
-      key={item.id}
-    >
-      <div className="flex flex-col gap-8 text-white text-center">
-        <h1 className="text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl">
-          {item.title}
-        </h1>
-        {item.id !== 6 && (  
-  <div className="relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]">
-    <Image src={item.img} alt={item.title} fill />
-  </div>
-)}
-
-        <p className="w-80 md:w-96 lg:w-[500px] lg:text-lg xl:w-[600px]">{item.desc}</p>
-        <Link href={item.link} target="_blank" rel="noopener noreferrer">
-          <button className="p-2 text-sm md:p-4 md:text-md lg:p-8 lg:text-lg bg-white text-gray-600 font-semibold m-4 rounded hover:bg-gray-200">
-            Check out
-          </button>
-        </Link>
-      </div>
-    </div>
-  ))}
-</motion.div>
-
+          <motion.div style={{ x }} className="flex">
+            <div className="h-screen w-[30vw] flex-shrink-0"></div>
+            {items.map((item) => (
+              <div
+                className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color} shadow-lg ${item.id === 6 ? 'pr-8' : ''}`}
+                key={item.id}
+              >
+                <div className="flex flex-col gap-8 text-white text-center">
+                  <h1 className="text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl">
+                    {item.title}
+                  </h1>
+                  {item.id !== 6 && (
+                    <div className="relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]">
+                      <Image src={item.img} alt={item.title} fill />
+                    </div>
+                  )}
+                  <p className="w-80 md:w-96 lg:w-[500px] lg:text-lg xl:w-[600px]">{item.desc}</p>
+                  <Link href={item.link} target="_blank" rel="noopener noreferrer">
+                    <button className="p-2 text-sm md:p-4 md:text-md lg:p-8 lg:text-lg bg-white text-gray-600 font-semibold m-4 rounded hover:bg-gray-200">
+                      Check out
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </motion.div>
