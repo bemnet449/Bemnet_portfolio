@@ -85,7 +85,7 @@ const AboutPage = () => {
               SKILLS
             </motion.h1>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
               {[
                 "React.js", "Next.js", "React Native", "Flutter", 
 "Node.js", "Express.js", "ASP.NET", "Laravel", "AWS S3", "Firebase", "Docker",

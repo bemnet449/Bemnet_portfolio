@@ -5,43 +5,92 @@ import { SiNextdotjs, SiTailwindcss, SiVercel, SiNetlify, SiTypescript, SiJavasc
 
 const PROJECTS = [
   {
+    title: "Travel Advisor",
+    description: "A full-stack travel guide application with interactive maps to locate banks, ATMs, and currency exchange points, featuring an AI-powered advisor for personalized recommendations, powered by a Node.js backend and MongoDB.",
+    image: "/traveladvisor.png",
+    link: "https://travel-advisor-anfx.vercel.app/",
+    technologies: ["React", "Material-UI", "Node.js", "MongoDB", "RapidAPI"],
+  },
+  {
+    title: "HealthyMe",
+    description: "A full-stack health and wellness application for tracking daily nutrition and creating personalized meal plans, integrated with a Node.js backend and Firebase for real-time data storage.",
+    image: "/healthyme.png",
+    link: "https://healthymealme.netlify.app/",
+    technologies: ["React", "Tailwind", "Node.js", "Firebase", "Netlify"],
+  },
+  {
+    title: "AirTracker",
+    description: "A full-stack air quality monitoring application displaying real-time pollution levels and weather data, utilizing a Node.js backend with Express and OpenWeather API integrations.",
+    image: "/airtracker.png",
+    link: "https://airtracker02.netlify.app/",
+    technologies: ["React", "Node.js", "Express", "OpenWeather API", "Netlify"],
+  },
+  {
+    title: "Jewelry Shop",
+    description: "A front-end jewelry store website showcasing product collections with a clean and modern design. (Front-end only)",
+    image: "/jewleryshop.png",
+    link: "https://jewelry-shop-three.vercel.app/",
+    technologies: ["React", "Tailwind", "Vercel"],
+  },
+  {
+    title: "Stay finder",
+    description: "A front-end rental platform with property listings and a responsive booking interface. (Front-end only)",
+    image: "/stayfinder.png",
+    link: "https://air-bnb-rental-2dv8.vercel.app/",
+    technologies: ["React", "Tailwind", "Vercel"],
+  },
+  {
+    title: "RL Restaurant",
+    description: "A front-end restaurant website presenting menus, reservation options, and an intuitive user experience. (Front-end only)",
+    image: "/rl.png",
+    link: "https://rlresturant.netlify.app/",
+    technologies: ["React", "Tailwind", "Netlify"],
+  },
+  {
+    title: "EthioCarRental",
+    description: "A front-end car rental service website built for Ethiopian businesses to showcase available vehicles and services. (Front-end only)",
+    image: "/ethiocarrental.png",
+    link: "https://ethiocarrental.netlify.app/",
+    technologies: ["React", "Tailwind", "Netlify"],
+  },
+  {
     title: "SHOPy",
-    description: "An eCommerce website showcasing a front-end React implementation.",
+    description: "An eCommerce website demonstrating a responsive front-end built with React for product browsing and shopping. (Front-end only)",
     image: "/4.jpeg",
     link: "https://ecommerce-website-three-psi.vercel.app/",
     technologies: ["React", "Tailwind", "Vercel"],
   },
   {
     title: "Rentup",
-    description: "A real estate and residence website UI/UX design.",
+    description: "A front-end user interface design for a real estate and residence rental platform. (Front-end only)",
     image: "/3.jpeg",
     link: "https://reeel-bemnets-projects-4408d151.vercel.app/",
     technologies: ["React", "UI/UX", "Vercel"],
   },
   {
     title: "MAMAA",
-    description: "A restaurant ordering website UI.",
+    description: "A front-end restaurant ordering system UI designed for an intuitive customer experience. (Front-end only)",
     image: "/2.jpeg",
     link: "https://restaurant-ordering-vert.vercel.app/",
     technologies: ["React", "UI/UX", "Vercel"],
   },
   {
     title: "Portfolio (Next.js)",
-    description: "A Next.js portfolio.",
+    description: "A personal portfolio website built using Next.js to showcase projects and skills. (Front-end only)",
     image: "https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     link: "https://portanim-teos.vercel.app/",
     technologies: ["Next.js", "Tailwind", "Vercel"],
   },
   {
     title: "Portfolio (React)",
-    description: "A React portfolio.",
+    description: "A React-based personal portfolio website highlighting professional projects and expertise. (Front-end only)",
     image: "/1.jpeg",
     link: "https://bemnetsintaeyhu.netlify.app/",
     technologies: ["React", "Tailwind", "Netlify"],
   },
   {
     title: "Other's in my GitHub",
-    description: "Explore more projects on my GitHub repository.",
+    description: "Explore additional projects and open-source contributions available on my GitHub profile.",
     image: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
     link: "https://github.com/bemnet449/",
     technologies: ["GitHub", "Open Source"],
@@ -120,6 +169,11 @@ const PortfolioPage = () => {
                   alt={project.title}
                 />
                 <div className="p-6 flex flex-col flex-1 justify-between">
+                  {index < 3 && (
+                    <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full border border-green-200 w-fit mb-2">
+                      Full-Stack
+                    </span>
+                  )}
                   <h6 className="text-xl font-semibold mb-2 text-gray-900">{project.title}</h6>
                   <p className="text-sm mb-4 text-gray-600">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mt-auto">
@@ -131,6 +185,11 @@ const PortfolioPage = () => {
                         {techIconMap[tech] || <FaGithub className="inline mr-1" />} {tech}
                       </span>
                     ))}
+                    {index < 3 && (
+                      <span className="bg-teal-100 text-teal-700 text-xs px-2 py-1 rounded-full border border-teal-200 flex items-center gap-1">
+                        Checkout
+                      </span>
+                    )}
                   </div>
                 </div>
               </motion.div>
