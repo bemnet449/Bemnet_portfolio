@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -12,41 +11,33 @@ const Homepage = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="h-full flex flex-col lg:flex-row px-2 sm:px-4 md:px-8 lg:px-20 xl:px-48">
-        {/* IMAGE CONTAINER - Centered on Small Screens */}
-        <div className="w-full sm:w-3/4 md:w-1/2 lg:w-1/2 h-64 sm:h-80 md:h-96 lg:h-[75vh] relative mt-4 mb-8 lg:mb-0 rounded-2xl shadow-2xl shadow-black overflow-hidden 
-          flex justify-center mx-auto">
-          <div className="w-full h-full relative">
-            <Image 
-              src="/1.jpg" 
-              alt="Hero Image" 
-              layout="fill" 
-              objectFit="cover"
-            />
-          </div>
-        </div>
-        
+      <div className="h-full flex flex-col items-center justify-center px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32">
         {/* TEXT CONTAINER */}
-        <div className="h-auto flex flex-col gap-4 sm:gap-6 items-center justify-center text-center lg:w-1/2">
+        <div className="flex flex-col gap-6 sm:gap-8 items-center text-center max-w-3xl">
           {/* TITLE */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-wide">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             BEMNET SINTAYEHU
           </h1>
           
           {/* SUBTITLE */}
-          <h3 className="text-base sm:text-lg md:text-2xl font-semibold text-gray-700">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-medium text-gray-600 leading-relaxed">
             FULL STACK WEB & MOBILE APP DEVELOPER & UI/UX DESIGNER
           </h3>
           
+          {/* DESCRIPTION */}
+          <p className="text-base sm:text-lg text-gray-500 max-w-2xl">
+            Crafting seamless digital experiences with innovative web and mobile solutions, paired with intuitive UI/UX design.
+          </p>
+          
           {/* BUTTONS */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4">
+          <div className="flex flex-col sm:flex-row gap-4 mt-6">
             <Link href="/portfolio">
-              <button className="px-6 py-3 rounded-lg ring-1 ring-black bg-black text-white text-lg font-medium transition hover:bg-gray-900">
+              <button className="px-8 py-3 rounded-full bg-blue-600 text-white text-lg font-semibold transition-all hover:bg-blue-700 hover:shadow-lg">
                 View My Work
               </button>
             </Link>
             <Link href="/contact">
-              <button className="px-6 py-3 rounded-lg ring-1 ring-black text-black text-lg font-medium transition hover:bg-gray-100">
+              <button className="px-8 py-3 rounded-full ring-1 ring-gray-300 text-gray-800 text-lg font-semibold transition-all hover:bg-gray-100 hover:shadow-md">
                 Contact Me
               </button>
             </Link>
