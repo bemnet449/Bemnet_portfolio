@@ -2,7 +2,8 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaGithub, FaPython, FaJava, FaDocker } from "react-icons/fa";
-import { SiNextdotjs, SiTailwindcss, SiVercel, SiNetlify, SiTypescript, SiJavascript, SiMongodb, SiPostgresql, SiFigma, SiFirebase, SiPhp, SiFlutter, SiExpress, SiBootstrap, SiAmazonaws, SiLaravel, SiOpensourceinitiative, SiSocketdotio } from "react-icons/si";
+import { SiNextdotjs, SiTailwindcss, SiVercel, SiNetlify, SiTypescript, SiJavascript, SiMongodb, SiPostgresql, SiFigma, SiFirebase, SiPhp, SiFlutter, SiExpress, SiBootstrap, SiLaravel, SiOpensourceinitiative, SiSocketdotio } from "react-icons/si";
+import Image from "next/image";
 
 const techIconMap = {
   React: <FaReact className="inline mr-1 text-blue-500" />,
@@ -52,7 +53,7 @@ const PROJECTS = [
   {
     title: "Keeley Aesthetics",
     description: "A professional aesthetic clinic website showcasing tailored beauty treatments, laser therapies, and skincare services. Features a clean, elegant design with booking integration to highlight the clinic’s expertise.",
-    image: "/keeley aesthetics.png",
+    image: "/keeley-aesthetics.png",
     link: "https://keeleyaesthetics.co.uk/",
     technologies: ["React", "Tailwind CSS", "Framer Motion"],
   },
@@ -108,19 +109,23 @@ const PortfolioPage = () => {
               <div className="relative group overflow-hidden h-48 sm:h-56">
                 {project.link ? (
                   <Link href={project.link} target="_blank" rel="noopener noreferrer">
-                    <img
+                    <Image
                       className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
                       src={project.image}
                       alt={project.title}
+                      width={500}
+                      height={300}
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
                   </Link>
                 ) : (
                   <div className="h-full w-full">
-                    <img
+                    <Image
                       className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
                       src={project.image}
                       alt={project.title}
+                      width={500}
+                      height={300}
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
                   </div>
