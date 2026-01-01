@@ -46,7 +46,7 @@ const PROJECTS = [
   {
     title: "Sabawiyan Leather",
     description: "A premium Ethiopian brand crafting high-quality, handcrafted leather products. Merging traditional heritage with modern aesthetics to offer durable, customized bags and accessories.",
-    image: "/sabawian.png",
+    image: "/sabawian-leather.png",
     link: "https://www.sabawiyan.com/",
     technologies: ["Next.js", "Tailwind CSS", "Supabase"],
   },
