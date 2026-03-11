@@ -44,11 +44,18 @@ const techIconMap = {
 const PROJECTS = [
 
   {
+    title: "GeezShoes",
+    description: "Ge’ez Shoes is a handmade leather footwear brand rooted in Ethiopian craftsmanship and pride.",
+    image: "/geezshoes.png",
+    link: "https://www.geezshoes.com/",
+    technologies: ["Next.js", "Tailwind CSS", "Supabase","compress.js"],
+  },
+  {
     title: "Sabawiyan Leather",
     description: "A premium Ethiopian brand crafting high-quality, handcrafted leather products. Merging traditional heritage with modern aesthetics to offer durable, customized bags and accessories.",
     image: "/sabawian-leather.png",
     link: "https://www.sabawiyan.com/",
-    technologies: ["Next.js", "Tailwind CSS", "Supabase"],
+    technologies: ["Next.js", "Tailwind CSS", "Supabase","NodeMailer"],
   },
   {
     title: "Keeley Aesthetics",
