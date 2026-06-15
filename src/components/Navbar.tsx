@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { ThemeToggle } from "./ThemeToggle";
 
 const Github = (props: any) => (
   <svg
@@ -98,12 +97,10 @@ export default function Navbar() {
               <Linkedin className="w-5 h-5" />
               <span className="sr-only">LinkedIn</span>
             </Link>
-            <ThemeToggle />
           </div>
 
           {/* Mobile menu button */}
           <div className="flex md:hidden items-center space-x-4">
-            <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"

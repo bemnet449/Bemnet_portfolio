@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import StarsBackground from "@/components/StarsBackground";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,15 +33,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} min-h-screen bg-background text-foreground flex flex-col`}>
+      <body className={`${inter.className} min-h-screen bg-background text-foreground flex flex-col relative`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem
+          forcedTheme="dark"
           disableTransitionOnChange
         >
+          <StarsBackground />
           <Navbar />
-          <main className="flex-grow">{children}</main>
+          <main className="flex-grow z-10">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
