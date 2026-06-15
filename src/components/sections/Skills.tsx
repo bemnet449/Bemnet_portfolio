@@ -36,16 +36,16 @@ export default function Skills() {
           {skillCategories.map((category, idx) => (
             <div 
               key={idx} 
-              className="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all hover:border-primary/40 group"
+              className="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:border-primary/50 hover:-translate-y-2 group flex flex-col items-center text-center"
             >
-              <h3 className="text-xl font-bold text-foreground mb-6 pb-2 border-b border-border/50 inline-block group-hover:text-primary transition-colors">
+              <h3 className="text-xl font-bold text-foreground mb-6 pb-2 border-b border-border/50 inline-block group-hover:text-primary transition-colors duration-300">
                 {category.title}
               </h3>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap justify-center gap-3">
                 {category.skills.map((skill, skillIdx) => (
                   <span 
                     key={skillIdx}
-                    className="px-4 py-2 bg-muted text-muted-foreground text-sm font-medium rounded-lg hover:bg-primary/10 hover:text-primary transition-colors cursor-default"
+                    className="px-4 py-2 bg-muted text-muted-foreground text-sm font-medium rounded-lg hover:bg-primary hover:text-primary-foreground hover:-translate-y-1 hover:shadow-md transition-all duration-300 cursor-default transform"
                   >
                     {skill}
                   </span>

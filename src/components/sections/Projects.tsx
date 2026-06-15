@@ -25,7 +25,11 @@ export default function Projects() {
     {
       id: 1,
       title: "GeezShoes",
-      description: "A modern e-commerce platform designed to deliver a seamless shopping experience through an intuitive interface, responsive design, and optimized user journeys.Implemented SEO best practices, image optimization, and caching strategies to improve search visibility, performance, and loading speeds while serving hundreds of active users. Built a comprehensive admin dashboard featuring product management, analytics, customer insights, top-selling product tracking, and streamlined content management workflows.",
+      description: [
+        "A modern e-commerce platform designed to deliver a seamless shopping experience through an intuitive interface, responsive design, and optimized user journeys.",
+        "Implemented SEO best practices, image optimization, and caching strategies to improve search visibility, performance, and loading speeds while serving hundreds of active users.",
+        "Built a comprehensive admin dashboard featuring product management, analytics, customer insights, top-selling product tracking, and streamlined content management workflows."
+      ],
       image: "/geezshoes.png",
       link: "https://www.geezshoes.com/",
       technologies: ["Next.js", "Tailwind CSS", "Supabase", "compress.js"],
@@ -33,7 +37,10 @@ export default function Projects() {
     {
       id: 2,
       title: "Sabawiyan Leather",
-      description: "Designed and developed a professional e-commerce website for a premium leather brand, focusing on clean design, responsive user experience, and strong brand presentation. Implemented SEO optimization and performance-enhancing caching strategies to improve search rankings, page speed, and overall user engagement.",
+      description: [
+        "Designed and developed a professional e-commerce website for a premium leather brand, focusing on clean design, responsive user experience, and strong brand presentation.",
+        "Implemented SEO optimization and performance-enhancing caching strategies to improve search rankings, page speed, and overall user engagement."
+      ],
       image: "/sabawian-leather.png",
       link: "https://www.sabawiyan.com/",
       technologies: ["Next.js", "Tailwind CSS", "Supabase", "NodeMailer"],
@@ -41,7 +48,10 @@ export default function Projects() {
     {
       id: 3,
       title: "Keeley Aesthetics",
-      description: "A professional aesthetic clinic website showcasing tailored beauty treatments, laser therapies, and skincare services. Features a clean, elegant design with booking integration to highlight the clinic’s expertise.",
+      description: [
+        "A professional aesthetic clinic website showcasing tailored beauty treatments, laser therapies, and skincare services.",
+        "Features a clean, elegant design with booking integration to highlight the clinic’s expertise."
+      ],
       image: "/keeley-aesthetics.png",
       link: "https://keeleyaesthetics.co.uk/",
       technologies: ["React", "Tailwind CSS", "Framer Motion"],
@@ -49,7 +59,10 @@ export default function Projects() {
     {
       id: 4,
       title: "Merkato Market",
-      description: "A comprehensive e-commerce marketplace connecting customers with unique, ethical, and sustainable products. Features a seamless shopping experience, secure payments, and diverse product categories.",
+      description: [
+        "A comprehensive e-commerce marketplace connecting customers with unique, ethical, and sustainable products.",
+        "Features a seamless shopping experience, secure payments, and diverse product categories."
+      ],
       image: "/Merkato.png",
       link: "https://merkatomarket.com/",
       technologies: ["Next.js", "Redux", "Tailwind CSS"],
@@ -57,7 +70,10 @@ export default function Projects() {
     {
       id: 5,
       title: "TravelBuddy",
-      description: "A full-stack travel companion web app with real-time chat, detailed trip planning, flight integration, and trust-based user scoring. Designed to help users discover trips and safely connect with potential travel partners.",
+      description: [
+        "A full-stack travel companion web app with real-time chat, detailed trip planning, flight integration, and trust-based user scoring.",
+        "Designed to help users discover trips and safely connect with potential travel partners."
+      ],
       image: "/TravelBuddy.png",
       link: "https://travel-buddy-ten-theta.vercel.app/auth",
       codeLink: "https://github.com/bemnet449/Industrial_Project",
@@ -66,7 +82,11 @@ export default function Projects() {
     {
       id: 6,
       title: "Archive Management System",
-      description: "A web-based offline Archive Management System for organizing, tracking, and managing files and folders. Features include folder creation, file movement tracking, and file metadata management. Ideal for industries needing efficient file organization, status monitoring, and easy retrieval of archived data.",
+      description: [
+        "A web-based offline Archive Management System for organizing, tracking, and managing files and folders.",
+        "Features include folder creation, file movement tracking, and file metadata management.",
+        "Ideal for industries needing efficient file organization, status monitoring, and easy retrieval of archived data."
+      ],
       image: "/ette.png",
       codeLink: "https://github.com/bemnet449/Archive-Management-System",
       technologies: ["React", "Node.js", "Express.js", "MongoDB"],
@@ -107,9 +127,11 @@ export default function Projects() {
                 </h3>
                 
                 <div className="bg-card border border-border p-6 rounded-xl shadow-md mb-6 w-full relative z-20">
-                  <p className="text-muted-foreground text-base leading-relaxed">
-                    {project.description}
-                  </p>
+                  <ul className="list-disc pl-5 space-y-2 text-muted-foreground text-base leading-relaxed">
+                    {project.description.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
                 </div>
 
                 <ul className={`flex flex-wrap gap-4 text-sm font-mono text-muted-foreground mb-8 ${idx % 2 !== 0 ? 'justify-start' : 'lg:justify-end justify-start'}`}>
