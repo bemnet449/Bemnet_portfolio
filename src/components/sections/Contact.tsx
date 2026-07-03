@@ -1,5 +1,42 @@
-import React from "react";
-import { Mail, MapPin, Globe } from "lucide-react";
+"use client";
+
+import React, { useState } from "react";
+import { Mail, MapPin, Send, Copy, Check, Phone } from "lucide-react";
+
+const ContactItem = ({ icon: Icon, title, value, href, copyValue }: { icon: any, title: string, value: string, href?: string, copyValue?: string }) => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(copyValue || value);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="flex flex-col items-center text-center group">
+      <div className="p-4 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors mb-4 flex-shrink-0">
+        <Icon className="w-8 h-8 text-primary" />
+      </div>
+      <p className="text-sm font-semibold text-muted-foreground mb-2">{title}</p>
+      <div className="flex items-center gap-2">
+        {href ? (
+          <a href={href} target={href.startsWith('mailto:') ? undefined : "_blank"} rel={href.startsWith('mailto:') ? undefined : "noopener noreferrer"} className="text-base text-foreground font-medium hover:text-primary transition-colors break-all">
+            {value}
+          </a>
+        ) : (
+          <p className="text-base text-foreground font-medium">{value}</p>
+        )}
+        <button
+          onClick={handleCopy}
+          className="p-1.5 text-muted-foreground hover:text-primary hover:bg-primary/10 rounded-md transition-colors flex-shrink-0"
+          title="Copy to clipboard"
+        >
+          {copied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
+        </button>
+      </div>
+    </div>
+  );
+};
 
 export default function Contact() {
   return (
@@ -19,37 +56,29 @@ export default function Contact() {
           {/* Contact Info */}
           <div className="bg-card border border-border p-8 md:p-12 rounded-2xl shadow-sm">
             <h4 className="text-2xl font-bold text-foreground mb-10 text-center">Contact Information</h4>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-              <div className="flex flex-col items-center text-center group">
-                <div className="p-4 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors mb-4">
-                  <Mail className="w-8 h-8 text-primary" />
-                </div>
-                <p className="text-sm font-semibold text-muted-foreground mb-2">Email</p>
-                <a href="mailto:bemnetsin510@gmail.com" className="text-base text-foreground font-medium hover:text-primary transition-colors">
-                  bemnetsin510@gmail.com
-                </a>
-              </div>
+              <ContactItem
+                icon={Mail}
+                title="Email"
+                value="bemnetsin510@gmail.com"
+                href="mailto:bemnetsin510@gmail.com"
+              />
 
-              <div className="flex flex-col items-center text-center group">
-                <div className="p-4 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors mb-4">
-                  <MapPin className="w-8 h-8 text-primary" />
-                </div>
-                <p className="text-sm font-semibold text-muted-foreground mb-2">Location</p>
-                <p className="text-base text-foreground font-medium">
-                  Addis Ababa, Ethiopia
-                </p>
-              </div>
+              <ContactItem
+                icon={Send}
+                title="Telegram"
+                value="@bonvack"
+                href="https://t.me/bonvack"
+                copyValue="@bonvack"
+              />
 
-              <div className="flex flex-col items-center text-center group">
-                <div className="p-4 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors mb-4">
-                  <Globe className="w-8 h-8 text-primary" />
-                </div>
-                <p className="text-sm font-semibold text-muted-foreground mb-2">Portfolio</p>
-                <a href="https://bemnet-portfolio.vercel.app" target="_blank" rel="noopener noreferrer" className="text-base text-foreground font-medium hover:text-primary transition-colors">
-                  bemnet-portfolio.vercel.app
-                </a>
-              </div>
+              <ContactItem
+                icon={Phone}
+                title="Phone"
+                value="+251943780783"
+                href="tel:+251943780783"
+              />
             </div>
           </div>
         </div>
