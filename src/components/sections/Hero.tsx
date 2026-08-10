@@ -33,8 +33,15 @@ export default function Hero() {
             >
               Contact Me
               <Mail className="ml-2 w-4 h-4" />
-          </Link>
-            
+            </Link>
+            <a
+              href="/Bemnet_Sintayehu_Resume.pdf"
+              download="Bemnet_Sintayehu_Resume.pdf"
+              className="inline-flex items-center justify-center px-6 py-3 border border-border text-base font-medium rounded-md text-foreground bg-background hover:bg-muted transition-all hover:scale-[1.02]"
+            >
+              Download CV
+              <Download className="ml-2 w-4 h-4" />
+            </a>
           </div>
         </div>
       </div>
